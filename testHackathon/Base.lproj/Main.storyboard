@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JzU-je-3Ft">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Artists-->
+        <scene sceneID="Htm-bt-6PE">
+            <objects>
+                <tableViewController id="JzU-je-3Ft" customClass="ArtistListViewController" customModule="testHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VR3-ie-fCl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="1x7-4a-4mq">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Artists" id="qh3-7F-hnV">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="QC1-Xl-ygV">
+                                        <connections>
+                                            <action selector="addStuff:" destination="JzU-je-3Ft" id="bcA-eu-ule"/>
+                                            <segue destination="ZmB-Qs-u7j" kind="presentation" id="91S-Dj-XdB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="artistCell" id="LiM-6X-jo2">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LiM-6X-jo2" id="vSv-g8-cwB">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JzU-je-3Ft" id="BU0-Kd-tFQ"/>
+                            <outlet property="delegate" destination="JzU-je-3Ft" id="44U-vA-JXL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Artists" id="FE2-Gt-LvE" colorLabel="IBBuiltInLabel-Green"/>
+                    <connections>
+                        <outlet property="add" destination="QC1-Xl-ygV" id="Gzd-yQ-xd2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EOM-YZ-Gpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="306"/>
+        </scene>
+        <!--Suggested Artists-->
+        <scene sceneID="c9U-im-Zgb">
+            <objects>
+                <tableViewController id="ZmB-Qs-u7j" customClass="SuggestedTableViewController" customModule="testHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yoq-2q-ilL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="GmT-a4-eXv">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Suggested Artists" id="Cmh-I2-fni">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nA2-L5-8q2">
+                                        <connections>
+                                            <segue destination="DQg-3Z-9YU" kind="unwind" unwindAction="cancel:" id="2NL-UT-Tkb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="artistCell" id="yFO-u4-WNa" customClass="artistCell">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yFO-u4-WNa" id="FCL-3r-NeF">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZmB-Qs-u7j" id="gth-sr-2sK"/>
+                            <outlet property="delegate" destination="ZmB-Qs-u7j" id="83d-JR-S5s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Suggested Artists" id="hfv-7t-GkD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Om8-jx-hVU">
+                            <connections>
+                                <segue destination="DQg-3Z-9YU" kind="unwind" identifier="cancelSegue" animates="NO" unwindAction="cancel:" id="aRf-Y9-t09"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ls8-lK-dbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DQg-3Z-9YU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2929" y="316"/>
+        </scene>
+    </scenes>
+</document>
